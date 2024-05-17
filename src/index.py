@@ -36,10 +36,12 @@ async def getEtsySel(keyword: str):
 
 @app.get("/amz/seller/{sellerid}")
 async def getAmzSellerJson(sellerid: str):
+    data={}
     if sellerid:
         sellerid=sellerid.strip()
         data=getSellerJson(sellerid)
         if data:
             return data
+        
     else:
         return []

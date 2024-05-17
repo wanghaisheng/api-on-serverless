@@ -25,7 +25,7 @@ def getSellerJson(sellerid):
         try:
             response = requests.get(
                 surl,
-                # headers=headers,
+                headers=headers,
 
                 timeout=10
                 # proxies=proxies # 如果需要代理，取消注释并设置正确的代理
