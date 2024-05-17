@@ -27,7 +27,7 @@ def getSellerJson(sellerid):
                 surl,
                 headers=headers,
 
-                timeout=10
+                timeout=8
                 # proxies=proxies # 如果需要代理，取消注释并设置正确的代理
 
                                                 # , verify=False
