@@ -2,6 +2,18 @@
 # save_valid_proxies('path_to_proxy_file.txt', ['proxy1', 'proxy2', 'proxy3'])
 import requests
 import json
+
+headers = {
+    "Accept": "*/*",
+    "Accept-Encoding": "gzip, deflate, br, zstd",
+    "Accept-Language": "en-US,en;q=0.9,zh;q=0.8,zh-CN;q=0.7",
+    "Origin": "chrome-extension://gobliffocflfaekfcaccndlffkhcafhb",
+    "Priority": "u=1, i",
+    "Sec-Fetch-Dest": "empty",
+    "Sec-Fetch-Mode": "cors",
+    "Sec-Fetch-Site": "cross-site",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+}
 def getSellerJson(sellerid):
 
         print("start to do", sellerid)
@@ -18,25 +30,13 @@ def getSellerJson(sellerid):
         proxies=None
         pro_str=None
         for i in range(max_retries):
-
-            if i==0:
                 
-                # print('without proxy')
-                pass
-                
-            else:
-                pro_str = get_proxy()["proxy"]
 
-                proxy = "http://{}".format(pro_str)
-
-                # proxy = f"http://{rand_proxies()}"
-                proxies = {"http": proxy, "https": proxy.replace("http", "https")}
-                print(f"{i}========get new proxy======= {proxies}")
                 try:
                     response = requests.get(
                         surl,
                         headers=headers,
-                        proxies=proxies # 如果需要代理，取消注释并设置正确的代理
+                        # proxies=proxies # 如果需要代理，取消注释并设置正确的代理
 
                                                         # , verify=False
 
