@@ -31,10 +31,10 @@ def getSellerJson(sellerid):
                                                 # , verify=False
 
         )
-            response.raise_for_status()  # 这将为4XX和5XX的响应抛出异常
+            # response.raise_for_status()  # 这将为4XX和5XX的响应抛出异常
 
             data = response.json()
-        
+            print(data)
             try:
                 data['sellers'][sellerid]
 
@@ -49,7 +49,7 @@ def getSellerJson(sellerid):
                 raise
                 
         except Exception as e:  # 捕获请求相关的异常
-        # print(f"Attempt failed with error: {e}")
+            print(f"Attempt failed with error: {e}")
 
             return None
 
