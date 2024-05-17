@@ -21,7 +21,7 @@ def getSellerJson(sellerid):
 
         # time.sleep(lag)
         surl = url + sellerid + "?domain=1&seller=" + sellerid
-        # print(f"try without proxy {sellerid}")
+        print(f"try without proxy {surl}")
         try:
             response = requests.get(
                 surl,
